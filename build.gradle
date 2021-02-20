@@ -28,6 +28,8 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+ext['hibernate.version'] = '5.2.11.Final'
+
 test {
     useJUnitPlatform()
 }
