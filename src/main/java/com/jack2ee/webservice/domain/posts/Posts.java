@@ -5,6 +5,7 @@ import com.jack2ee.webservice.domain.BaseTimeEntity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.AccessLevel;
@@ -31,8 +32,12 @@ import lombok.NoArgsConstructor;
  * ex) SalesManager.java -> sales_manager table
  **/
 public class Posts extends BaseTimeEntity {
-    @Id // 해당 테이블의 PK 필드를 나타냅니다.
-    @GeneratedValue
+
+    @Id
+    /** 해당 테이블의 PK 필드를 나타냅니다.
+     *
+     **/
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     /**
      * PK 생성 규칙을 나타냅니다.
      * 기본값은 AUTO로, MySQL의 auto_increment와 같이 자동증가하는 정수형 값이 됩니다.

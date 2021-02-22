@@ -1,7 +1,7 @@
 package com.jack2ee.webservice.web;
 
-import com.jack2ee.webservice.domain.posts.PostsRepository;
-import com.jack2ee.webservice.dto.PostSaveRequestDto;
+import com.jack2ee.webservice.dto.PostsSaveRequestDto;
+import com.jack2ee.webservice.service.PostsService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +17,7 @@ import lombok.AllArgsConstructor;
  **/
 public class WebRestController {
 
-    private PostsRepository postsRepository;
+    private PostsService postsService;
 
     @GetMapping("/hello")
     public String hello() {
@@ -25,7 +25,7 @@ public class WebRestController {
     }
 
     @PostMapping("/posts")
-    public void savePosts(@RequestBody PostSaveRequestDto dto) {
-        postsRepository.save(dto.toEntity());
+    public void savePosts(@RequestBody PostsSaveRequestDto dto) {
+        postsService.save(dto);
     }
 }
