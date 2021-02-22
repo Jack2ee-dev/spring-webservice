@@ -1,3 +1,4 @@
+# Test
 spring:
   profiles:
     active: local
@@ -6,15 +7,5 @@ spring:
 ---
 spring:
   profiles: local
-  datasource:
-    data: classpath:data-h2.sql # 시작할 때 실행시킬 script
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
   jpa:
     show-sql: true
-    hibernate:
-      ddl-auto: create-drop
-  h2:
-    console:
-      enabled: true
